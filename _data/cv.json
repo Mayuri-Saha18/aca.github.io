@@ -1,152 +1,215 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Bitan Mallik",
+    "email": "bm752@cornell.edu",
+    "phone": "+1-551-362-9442",
+    "website": "",
+    "summary": "M.Eng Candidate in Engineering Management at Cornell University with 6+ years of experience in Analog Mixed-Signal Design",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
+      "address": "131 Veterans",
+      "postalCode": "14850",
+      "city": "Ithaca",
       "countryCode": "US",
-      "region": ""
+      "region": "New York"
     },
     "profiles": [
       {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
-      },
-      {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "bitanmallik0609",
+        "url": "https://github.com/bitanmallik0609"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Renesas Electronics",
+      "position": "Senior Engineer - Analog Mixed-Signal Design",
+      "location": "Bingen, Germany",
+      "startDate": "2023-11",
+      "endDate": "2025-08",
+      "summary": "",
+      "highlights": [
+        "Led requirements analysis for industrial Ethernet; created product spec in Polarion; achieved CDR, SDR, LDR gates",
+        "Designed analog transmitter on 40 nm TSMC for Ethernet PHY IP; verified chip top; simulated package and signed-off",
+        "Ran cross-team design, layout, and verification reviews across 3 groups; passed compliance test; got first silicon success"
+      ]
+    },
+    {
+      "company": "Apple",
+      "position": "ICT3 Engineer - AMS Layout Design",
+      "location": "Munich, Germany",
+      "startDate": "2022-03",
+      "endDate": "2023-10",
+      "summary": "",
+      "highlights": [
+        "Led a team of 4 engineers to develop PMU using FinFET for Cellular RF SoC; delivered megacell ahead of schedule",
+        "Managed third-party vendors; organized daily stand-ups, distributed tasks, accomplished goals, and provided feedback",
+        "Introduced Innovus PnR for AMS blocks and used ParagonX to minimize parasitics; reduced critical-net RC by 20%"
+      ]
+    },
+    {
+      "company": "Fraunhofer IIS",
+      "position": "Research Engineer - Analog Mixed-Signal Design",
+      "location": "Erlangen, Germany",
+      "startDate": "2018-11",
+      "endDate": "2022-02",
+      "summary": "",
+      "highlights": [
+        "Designed a CDR circuit operating at 8 GHz using 22nm GF FDX for ASA-compliant automotive infotainment SoC",
+        "Designed multiple ROICs on 180nm XFAB/TowerJazz for ToF imaging, smoke detection, & smart farming applications",
+        "Mentored over 3 research assistants for master thesis; formally reviewed journal, presentation, & research papers"
+      ]
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
+      "institution": "Cornell University (College of Engineering)",
+      "area": "Engineering Management",
+      "studyType": "Master of Engineering (M.Eng)",
+      "startDate": "2025",
+      "endDate": "2026",
+      "gpa": null,
+      "location": "Ithaca, New York",
+      "courses": []
+    },
+    {
+      "institution": "Dresden University of Technology (TU Dresden)",
+      "area": "Nanoelectronic Systems",
+      "studyType": "Master of Science (M.Sc)",
+      "startDate": "2015",
       "endDate": "2018",
-      "gpa": null,
+      "gpa": "3.73/4.00",
+      "location": "Dresden, Germany",
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
+      "institution": "West Bengal University of Technology",
+      "area": "Electronics and Communication Engineering",
+      "studyType": "Bachelor of Technology (B.Tech)",
+      "startDate": "2009",
+      "endDate": "2013",
+      "gpa": "3.76/4.00",
+      "location": "Kolkata, India",
       "courses": []
     }
   ],
-  "skills": [],
-  "languages": [],
+  "skills": [
+    {
+      "name": "EDA/IC Tools",
+      "level": "",
+      "keywords": [
+        "Cadence Virtuoso (ADE Assembler, Spectre, AMS)",
+        "Innovus",
+        "Quantus/QRC",
+        "Calibre (DRC/LVS)",
+        "PEX"
+      ]
+    },
+    {
+      "name": "Digital & Programming",
+      "level": "",
+      "keywords": [
+        "Verilog (RTL)",
+        "MATLAB/Simulink",
+        "C",
+        "Java",
+        "Shell",
+        "Linux",
+        "Windows"
+      ]
+    },
+    {
+      "name": "Workflow & Collaboration",
+      "level": "",
+      "keywords": [
+        "Polarion",
+        "Confluence",
+        "JIRA",
+        "Git",
+        "LaTeX"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "German",
+      "fluency": "Advanced"
+    },
+    {
+      "language": "Hindi",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Bengali",
+      "fluency": "Native"
+    }
+  ],
   "interests": [],
   "references": [],
-  "publications": [
+  "projects": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Fast-start-up SerDes transmitter for Neuromorphic Hardware Systems",
+      "summary": "M.Sc. Thesis",
+      "startDate": "2017",
+      "endDate": "2018",
+      "institution": "TU Dresden",
+      "highlights": [
+        "Developed a fast start-up SerDes transmitter for neuromorphic system; modeled and verified architecture in simulation",
+        "Extracted key metrics e.g. power, performance, area, & wake-up time; documented & presented results; defended thesis"
+      ]
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Low latency SerDes link for high-speed communication systems",
+      "summary": "M.Sc. Project",
+      "startDate": "2016",
+      "endDate": "2017",
+      "institution": "TU Dresden",
+      "highlights": [
+        "Designed 2.5 GHz SerDes link and burst-mode CDR (RTL); verified architecture using mixed-mode (AMS) simulation",
+        "Achieved optimum power efficiency, low latency, and reduced link initialization delay; documented & presented results"
+      ]
     }
   ],
-  "presentations": [
+  "awards": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
+      "title": "GFF an der TU Dresden Scholarship",
+      "date": "2017",
+      "awarder": "TU Dresden",
+      "summary": "Scholarship for research contribution during Master's Thesis at chair HPSN"
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
+      "title": "DAAD Scholarship",
+      "date": "2016",
+      "awarder": "DAAD",
+      "summary": "Scholarship for ranking in the top 5% and delivering exceptional project work at TU Dresden"
     }
   ],
-  "teaching": [
+  "certificates": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "name": "Phase Locked Loops - Practical & Advanced Design",
+      "date": "2024",
+      "issuer": "Prof. Woogeun Rhee",
+      "url": ""
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "name": "Practical Design of Data Converters",
+      "date": "2021",
+      "issuer": "MEAD Course at EPFL, Switzerland",
+      "url": ""
+    },
+    {
+      "name": "Verification and Test of Integrated Circuits",
+      "date": "2020",
+      "issuer": "eecy-ic gmbH (Acquired by BOSCH)",
+      "url": ""
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "publications": [],
+  "presentations": [],
+  "teaching": [],
+  "portfolio": []
 }
