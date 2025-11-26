@@ -20,3 +20,5 @@ package-lock.json
 .vscode/
 
 temp_cv/
+
+temp_certificates/
