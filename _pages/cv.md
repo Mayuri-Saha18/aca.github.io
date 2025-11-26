@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Download PDF Resume](/files/Resume_BitanMallik.pdf){: .btn .btn--primary}
+[View Resume](/files/Resume_BitanMallik.pdf){: .btn .btn--primary}
 
 Education
 ======

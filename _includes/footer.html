@@ -1,25 +1,132 @@
-{% include base_path %}
 
-{% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
+
+<style>
+  /* MODERN FOOTER STYLES */
+  .page__footer {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    position: relative;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+  }
+
+  .page__footer a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .page__footer a:hover {
+    color: #4da6ff; /* Modern blue accent on hover */
+    text-decoration: none;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  /* Social Icons Section */
+  .footer-social-icons {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .footer-social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #2d2d2d;
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .footer-social-icons a:hover {
+    transform: translateY(-5px); /* Lift up effect */
+    background-color: #4da6ff;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(77, 166, 255, 0.3);
+  }
+
+  /* Contact Info Section */
+  .footer-info {
+    font-size: 0.95rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Copyright Section */
+  .page__footer-copyright {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-top: 1rem;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    width: 80%;
+    text-align: center;
+  }
+</style>
+<div class="footer-container">
+
+  <!-- 1. Social Media Icons (Big & Interactive) -->
+  <div class="footer-social-icons">
     {% if site.author.github %}
-      <li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+      <a href="https://github.com/{{ site.author.github }}" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
     {% endif %}
-    {% if site.author.bitbucket %}
-      <li><a href="https://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
-    {% endif %}
-    {% if site.atom_feed.hide != true %}
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-    {% endif %}
-  </ul>
-</div>
-{% endif %}
 
-<div class="page__footer-copyright">
-  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated {{ "now" | date: '%Y-%m-%d' }}
+    {% if site.author.linkedin %}
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    {% endif %}
+
+    {% if site.author.email %}
+      <a href="mailto:{{ site.author.email }}" title="Email Me">
+        <i class="fas fa-envelope"></i>
+      </a>
+    {% endif %}
+
+    
+  </div>
+
+  <!-- 2. Text Contact Info -->
+  <div class="footer-info">
+    <span>
+      <i class="fas fa-user-circle"></i> {{ site.author.name }}
+    </span>
+    {% if site.author.location %}
+      <span>
+        <i class="fas fa-map-marker-alt"></i> {{ site.author.location }}
+      </span>
+    {% endif %}
+    {% if site.author.employer %}
+      <span>
+        <i class="fas fa-university"></i> {{ site.author.employer }}
+      </span>
+    {% endif %}
+  </div>
+
+  <!-- 3. Copyright & Credits -->
+  <div class="page__footer-copyright">
+    &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. 
+    Designed with <i class="fas fa-heart" style="color: #e25555;"></i> using <a href="https://academicpages.github.io">AcademicPages</a>.
+  </div>
+
 </div>
