@@ -9,6 +9,10 @@ redirect_from:
 
 {% include base_path %}
 
+<p style="margin-bottom: 2rem;">
+  Here is a comprehensive overview of my professional experience, education, and technical skills. You can also view or download my resume.
+</p>
+
 <style>
   /* PROFESSIONAL CV STYLES */
   

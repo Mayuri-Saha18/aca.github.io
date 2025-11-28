@@ -18,18 +18,23 @@
 
 .page {
   @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(2 of 12);
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0;
+    float: none;
+    clear: both;
   }
 
   .page__inner-wrap {
     @include full();
+    width: 100%;
 
     .page__content,
     .page__meta,
     .page__share {
       @include full();
+      width: 100%;
     }
   }
 }

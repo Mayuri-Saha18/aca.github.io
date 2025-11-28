@@ -1,11 +1,13 @@
 ---
 permalink: /
 title: "About Me"
-author_profile: true
+author_profile: false
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+{% include hero-profile.html %}
 
 Hello! I'm Bitan Mallik, a seasoned Analog Mixed-Signal Design Engineer currently pursuing a Master of Engineering in Engineering Management at Cornell University (Class of 2026). With over 6 years of professional experience in semiconductor industry, I specialize in designing high-performance analog and mixed-signal circuits for advanced applications.
 
