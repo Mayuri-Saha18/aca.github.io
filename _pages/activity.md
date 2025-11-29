@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "Project Activities"
-permalink: /projects_activity/
+title: "Activities"
+permalink: /activity/
 author_profile: true
 ---
 
@@ -88,7 +88,7 @@ author_profile: true
 {% include base_path %}
 
 <p>
-  Here you will find updates on my ongoing engineering tasks, simulation demos, and project milestones.
+  Here you will find updates on my ongoing engineering tasks, simulation demos, and activities.
 </p>
 
 <div class="projects-grid">

@@ -22,9 +22,12 @@ main:
     
   # - title: "Portfolio"
   #   url: /portfolio/
+
+  - title: "Projects"
+    url: /projects/
  
-  - title: "Project Activitites"
-    url: /projects_activity/
+  - title: "Activitites"
+    url: /activity/
         
   - title: "Blog Posts"
     url: /year-archive/
