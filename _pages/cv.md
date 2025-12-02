@@ -9,6 +9,10 @@ redirect_from:
 
 {% include base_path %}
 
+<p style="margin-bottom: 2rem;">
+  Here is a comprehensive overview of my professional experience, education, and technical skills. You can also view or download my resume.
+</p>
+
 <style>
   /* PROFESSIONAL CV STYLES */
   
@@ -159,144 +163,75 @@ redirect_from:
 <!-- WORK EXPERIENCE -->
 <h2 class="cv-section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
 
+{% for job in site.data.cv.work_experience %}
 <div class="cv-entry">
-  <div class="cv-date">2023 – 2025</div>
+  <div class="cv-date">{{ job.date }}</div>
   <div class="cv-content">
-    <div class="cv-job-title">Senior Engineer - Analog Mixed-Signal Design</div>
-    <span class="cv-company">Renesas Electronics <span class="cv-location">• Bingen, Germany</span></span>
+    <div class="cv-job-title">{{ job.title }}</div>
+    <span class="cv-company">{{ job.company }} <span class="cv-location">• {{ job.location }}</span></span>
     <ul>
-      <li>Led requirements analysis for industrial Ethernet; created product spec in Polarion; achieved CDR, SDR, LDR gates.</li>
-      <li>Designed analog transmitter on 40 nm TSMC for Ethernet PHY IP; verified chip top; simulated package and signed-off.</li>
-      <li>Ran cross-team design, layout, and verification reviews across 3 groups; passed compliance test; got first silicon success.</li>
+      {% for point in job.points %}
+      <li>{{ point }}</li>
+      {% endfor %}
     </ul>
   </div>
 </div>
-
-<div class="cv-entry">
-  <div class="cv-date">2022 – 2023</div>
-  <div class="cv-content">
-    <div class="cv-job-title">ICT3 Engineer - AMS Layout Design</div>
-    <span class="cv-company">Apple <span class="cv-location">• Munich, Germany</span></span>
-    <ul>
-      <li>Led a team of 4 engineers to develop PMU using FinFET for Cellular RF SoC; delivered megacell ahead of schedule.</li>
-      <li>Managed third-party vendors; organized daily stand-ups, distributed tasks, accomplished goals, and provided feedback.</li>
-      <li>Introduced Innovus PnR for AMS blocks and used ParagonX to minimize parasitics; reduced critical-net RC by 20%.</li>
-    </ul>
-  </div>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-date">2018 – 2022</div>
-  <div class="cv-content">
-    <div class="cv-job-title">Research Engineer - Analog Mixed-Signal Design</div>
-    <span class="cv-company">Fraunhofer IIS <span class="cv-location">• Erlangen, Germany</span></span>
-    <ul>
-      <li>Designed a CDR circuit operating at 8 GHz using 22nm GF FDX for ASA-compliant automotive infotainment SoC.</li>
-      <li>Designed multiple ROICs on 180nm XFAB/TowerJazz for ToF imaging, smoke detection, & smart farming applications.</li>
-      <li>Mentored over 3 research assistants for master thesis; formally reviewed journal, presentation, & research papers.</li>
-    </ul>
-  </div>
-</div>
+{% endfor %}
 
 
 <!-- EDUCATION -->
 <h2 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
 
+{% for edu in site.data.cv.education %}
 <div class="cv-entry">
-  <div class="cv-date">2025 – 2026</div>
+  <div class="cv-date">{{ edu.date }}</div>
   <div class="cv-content">
-    <div class="cv-job-title">Master of Engineering (M.Eng) in Engineering Management</div>
-    <span class="cv-company">Cornell University <span class="cv-location">• Ithaca, New York</span></span>
-  </div>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-date">2015 – 2018</div>
-  <div class="cv-content">
-    <div class="cv-job-title">Master of Science (M.Sc) in Nanoelectronic Systems</div>
-    <span class="cv-company">TU Dresden <span class="cv-location">• Dresden, Germany</span></span>
+    <div class="cv-job-title">{{ edu.title }}</div>
+    <span class="cv-company">{{ edu.company }} <span class="cv-location">• {{ edu.location }}</span></span>
+    {% if edu.points.size > 0 %}
     <ul>
-      <li><strong>GPA:</strong> 3.73/4.00</li>
+      {% for point in edu.points %}
+      <li>{{ point }}</li>
+      {% endfor %}
     </ul>
+    {% endif %}
   </div>
 </div>
-
-<div class="cv-entry">
-  <div class="cv-date">2009 – 2013</div>
-  <div class="cv-content">
-    <div class="cv-job-title">Bachelor of Technology (B.Tech) in ECE</div>
-    <span class="cv-company">West Bengal University of Technology <span class="cv-location">• Kolkata, India</span></span>
-    <ul>
-      <li><strong>GPA:</strong> 3.76/4.00</li>
-    </ul>
-  </div>
-</div>
+{% endfor %}
 
 
 <!-- TECHNICAL SKILLS -->
 <h2 class="cv-section-title"><i class="fas fa-tools"></i> Technical Skills</h2>
 
+{% for skill in site.data.cv.skills %}
 <div class="cv-entry">
-  <div class="cv-date">EDA/IC Tools</div>
+  <div class="cv-date">{{ skill.category }}</div>
   <div class="cv-content skills-container">
-    <span class="skill-tag">Cadence Virtuoso</span>
-    <span class="skill-tag">ADE Assembler/Spectre/AMS</span>
-    <span class="skill-tag">Innovus</span>
-    <span class="skill-tag">Quantus/QRC</span>
-    <span class="skill-tag">Calibre (DRC/LVS/PEX)</span>
+    {% for tag in skill.tags %}
+    <span class="skill-tag">{{ tag }}</span>
+    {% endfor %}
   </div>
 </div>
-
-<div class="cv-entry">
-  <div class="cv-date">Digital & Coding</div>
-  <div class="cv-content skills-container">
-    <span class="skill-tag">Verilog (RTL)</span>
-    <span class="skill-tag">MATLAB/Simulink</span>
-    <span class="skill-tag">C</span>
-    <span class="skill-tag">Java</span>
-    <span class="skill-tag">Shell Scripting</span>
-    <span class="skill-tag">Linux/Windows</span>
-  </div>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-date">Workflow</div>
-  <div class="cv-content skills-container">
-    <span class="skill-tag">Polarion</span>
-    <span class="skill-tag">Confluence</span>
-    <span class="skill-tag">JIRA</span>
-    <span class="skill-tag">Git</span>
-    <span class="skill-tag">LaTeX</span>
-  </div>
-</div>
+{% endfor %}
 
 
 <!-- ACADEMIC PROJECTS -->
 <h2 class="cv-section-title"><i class="fas fa-project-diagram"></i> Academic Projects</h2>
 
+{% for project in site.data.cv.academic_projects %}
 <div class="cv-entry">
-  <div class="cv-date">2017 – 2018</div>
+  <div class="cv-date">{{ project.date }}</div>
   <div class="cv-content">
-    <div class="cv-job-title">M.Sc. Thesis: Fast-start-up SerDes Transmitter</div>
-    <span class="cv-company">TU Dresden</span>
+    <div class="cv-job-title">{{ project.title }}</div>
+    <span class="cv-company">{{ project.company }}</span>
     <ul>
-      <li>Developed a fast start-up SerDes transmitter for neuromorphic systems; verified architecture in simulation.</li>
-      <li>Extracted key metrics (power, area, wake-up time); documented results and defended thesis.</li>
+      {% for point in project.points %}
+      <li>{{ point }}</li>
+      {% endfor %}
     </ul>
   </div>
 </div>
-
-<div class="cv-entry">
-  <div class="cv-date">2016 – 2017</div>
-  <div class="cv-content">
-    <div class="cv-job-title">M.Sc. Project: Low Latency SerDes Link</div>
-    <span class="cv-company">TU Dresden</span>
-    <ul>
-      <li>Designed 2.5 GHz SerDes link and burst-mode CDR (RTL); verified using mixed-mode (AMS) simulation.</li>
-      <li>Achieved optimum power efficiency and reduced link initialization delay.</li>
-    </ul>
-  </div>
-</div>
+{% endfor %}
 
 
 <!-- CERTIFICATIONS & AWARDS GRID -->
@@ -306,9 +241,9 @@ redirect_from:
   <div style="flex: 1; min-width: 300px;">
     <h2 class="cv-section-title" style="margin-top: 0;"><i class="fas fa-certificate"></i> Certifications</h2>
     <ul style="color: var(--global-text-color); line-height: 1.6;">
-      <li><strong>Phase Locked Loops</strong> - Prof. Woogeun Rhee (2024)</li>
-      <li><strong>Practical Design of Data Converters</strong> - EPFL (2021)</li>
-      <li><strong>Verification & Test of ICs</strong> - eecy-ic gmbH (2020)</li>
+      {% for cert in site.data.cv.certifications_summary %}
+      <li>{{ cert }}</li>
+      {% endfor %}
     </ul>
   </div>
 
@@ -316,8 +251,9 @@ redirect_from:
   <div style="flex: 1; min-width: 300px;">
     <h2 class="cv-section-title" style="margin-top: 0;"><i class="fas fa-trophy"></i> Awards</h2>
     <ul style="color: var(--global-text-color); line-height: 1.6;">
-      <li><strong>GFF Scholarship</strong> - TU Dresden (2017)</li>
-      <li><strong>DAAD Scholarship</strong> - TU Dresden (2016)</li>
+      {% for award in site.data.cv.awards_summary %}
+      <li>{{ award }}</li>
+      {% endfor %}
     </ul>
   </div>
 
@@ -327,8 +263,7 @@ redirect_from:
 <!-- LANGUAGES -->
 <h2 class="cv-section-title"><i class="fas fa-language"></i> Languages</h2>
 <div class="skills-container">
-  <span class="skill-tag">English (Fluent)</span>
-  <span class="skill-tag">German (Advanced)</span>
-  <span class="skill-tag">Hindi (Fluent)</span>
-  <span class="skill-tag">Bengali (Native)</span>
+  {% for lang in site.data.cv.languages %}
+  <span class="skill-tag">{{ lang }}</span>
+  {% endfor %}
 </div>

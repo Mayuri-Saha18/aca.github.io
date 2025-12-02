@@ -1,127 +1,91 @@
 {
-  "basics": {
-    "name": "Bitan Mallik",
-    "email": "bm752@cornell.edu",
-    "phone": "+1-551-362-9442",
-    "website": "",
-    "summary": "M.Eng Candidate in Engineering Management at Cornell University with 6+ years of experience in Analog Mixed-Signal Design",
-    "location": {
-      "address": "131 Veterans",
-      "postalCode": "14850",
-      "city": "Ithaca",
-      "countryCode": "US",
-      "region": "New York"
-    },
-    "profiles": [
-      {
-        "network": "GitHub",
-        "username": "bitanmallik0609",
-        "url": "https://github.com/bitanmallik0609"
-      }
-    ]
-  },
-  "work": [
+  "work_experience": [
     {
+      "date": "2023 – 2025",
+      "title": "Senior Engineer - Analog Mixed-Signal Design",
       "company": "Renesas Electronics",
-      "position": "Senior Engineer - Analog Mixed-Signal Design",
       "location": "Bingen, Germany",
-      "startDate": "2023-11",
-      "endDate": "2025-08",
-      "summary": "",
-      "highlights": [
-        "Led requirements analysis for industrial Ethernet; created product spec in Polarion; achieved CDR, SDR, LDR gates",
-        "Designed analog transmitter on 40 nm TSMC for Ethernet PHY IP; verified chip top; simulated package and signed-off",
-        "Ran cross-team design, layout, and verification reviews across 3 groups; passed compliance test; got first silicon success"
+      "points": [
+        "Led requirements analysis for industrial Ethernet; created product spec in Polarion; achieved CDR, SDR, LDR gates.",
+        "Designed analog transmitter on 40 nm TSMC for Ethernet PHY IP; verified chip top; simulated package and signed-off.",
+        "Ran cross-team design, layout, and verification reviews across 3 groups; passed compliance test; got first silicon success."
       ]
     },
     {
+      "date": "2022 – 2023",
+      "title": "ICT3 Engineer - AMS Layout Design",
       "company": "Apple",
-      "position": "ICT3 Engineer - AMS Layout Design",
       "location": "Munich, Germany",
-      "startDate": "2022-03",
-      "endDate": "2023-10",
-      "summary": "",
-      "highlights": [
-        "Led a team of 4 engineers to develop PMU using FinFET for Cellular RF SoC; delivered megacell ahead of schedule",
-        "Managed third-party vendors; organized daily stand-ups, distributed tasks, accomplished goals, and provided feedback",
-        "Introduced Innovus PnR for AMS blocks and used ParagonX to minimize parasitics; reduced critical-net RC by 20%"
+      "points": [
+        "Led a team of 4 engineers to develop PMU using FinFET for Cellular RF SoC; delivered megacell ahead of schedule.",
+        "Managed third-party vendors; organized daily stand-ups, distributed tasks, accomplished goals, and provided feedback.",
+        "Introduced Innovus PnR for AMS blocks and used ParagonX to minimize parasitics; reduced critical-net RC by 20%."
       ]
     },
     {
+      "date": "2018 – 2022",
+      "title": "Research Engineer - Analog Mixed-Signal Design",
       "company": "Fraunhofer IIS",
-      "position": "Research Engineer - Analog Mixed-Signal Design",
       "location": "Erlangen, Germany",
-      "startDate": "2018-11",
-      "endDate": "2022-02",
-      "summary": "",
-      "highlights": [
-        "Designed a CDR circuit operating at 8 GHz using 22nm GF FDX for ASA-compliant automotive infotainment SoC",
-        "Designed multiple ROICs on 180nm XFAB/TowerJazz for ToF imaging, smoke detection, & smart farming applications",
-        "Mentored over 3 research assistants for master thesis; formally reviewed journal, presentation, & research papers"
+      "points": [
+        "Designed a CDR circuit operating at 8 GHz using 22nm GF FDX for ASA-compliant automotive infotainment SoC.",
+        "Designed multiple ROICs on 180nm XFAB/TowerJazz for ToF imaging, smoke detection, & smart farming applications.",
+        "Mentored over 3 research assistants for master thesis; formally reviewed journal, presentation, & research papers."
       ]
     }
   ],
   "education": [
     {
-      "institution": "Cornell University (College of Engineering)",
-      "area": "Engineering Management",
-      "studyType": "Master of Engineering (M.Eng)",
-      "startDate": "2025",
-      "endDate": "2026",
-      "gpa": null,
+      "date": "2025 – 2026",
+      "title": "Master of Engineering (M.Eng) in Engineering Management",
+      "company": "Cornell University",
       "location": "Ithaca, New York",
-      "courses": []
+      "points": []
     },
     {
-      "institution": "Dresden University of Technology (TU Dresden)",
-      "area": "Nanoelectronic Systems",
-      "studyType": "Master of Science (M.Sc)",
-      "startDate": "2015",
-      "endDate": "2018",
-      "gpa": "3.73/4.00",
+      "date": "2015 – 2018",
+      "title": "Master of Science (M.Sc) in Nanoelectronic Systems",
+      "company": "TU Dresden",
       "location": "Dresden, Germany",
-      "courses": []
+      "points": [
+        "<strong>GPA:</strong> 3.73/4.00"
+      ]
     },
     {
-      "institution": "West Bengal University of Technology",
-      "area": "Electronics and Communication Engineering",
-      "studyType": "Bachelor of Technology (B.Tech)",
-      "startDate": "2009",
-      "endDate": "2013",
-      "gpa": "3.76/4.00",
+      "date": "2009 – 2013",
+      "title": "Bachelor of Technology (B.Tech) in ECE",
+      "company": "West Bengal University of Technology",
       "location": "Kolkata, India",
-      "courses": []
+      "points": [
+        "<strong>GPA:</strong> 3.76/4.00"
+      ]
     }
   ],
   "skills": [
     {
-      "name": "EDA/IC Tools",
-      "level": "",
-      "keywords": [
-        "Cadence Virtuoso (ADE Assembler, Spectre, AMS)",
+      "category": "EDA/IC Tools",
+      "tags": [
+        "Cadence Virtuoso",
+        "ADE Assembler/Spectre/AMS",
         "Innovus",
         "Quantus/QRC",
-        "Calibre (DRC/LVS)",
-        "PEX"
+        "Calibre (DRC/LVS/PEX)"
       ]
     },
     {
-      "name": "Digital & Programming",
-      "level": "",
-      "keywords": [
+      "category": "Digital & Coding",
+      "tags": [
         "Verilog (RTL)",
         "MATLAB/Simulink",
         "C",
         "Java",
-        "Shell",
-        "Linux",
-        "Windows"
+        "Shell Scripting",
+        "Linux/Windows"
       ]
     },
     {
-      "name": "Workflow & Collaboration",
-      "level": "",
-      "keywords": [
+      "category": "Workflow",
+      "tags": [
         "Polarion",
         "Confluence",
         "JIRA",
@@ -130,86 +94,39 @@
       ]
     }
   ],
+  "academic_projects": [
+    {
+      "date": "2017 – 2018",
+      "title": "M.Sc. Thesis: Fast-start-up SerDes Transmitter",
+      "company": "TU Dresden",
+      "points": [
+        "Developed a fast start-up SerDes transmitter for neuromorphic systems; verified architecture in simulation.",
+        "Extracted key metrics (power, area, wake-up time); documented results and defended thesis."
+      ]
+    },
+    {
+      "date": "2016 – 2017",
+      "title": "M.Sc. Project: Low Latency SerDes Link",
+      "company": "TU Dresden",
+      "points": [
+        "Designed 2.5 GHz SerDes link and burst-mode CDR (RTL); verified using mixed-mode (AMS) simulation.",
+        "Achieved optimum power efficiency and reduced link initialization delay."
+      ]
+    }
+  ],
+  "certifications_summary": [
+    "<strong>Phase Locked Loops</strong> - Prof. Woogeun Rhee (2024)",
+    "<strong>Practical Design of Data Converters</strong> - EPFL (2021)",
+    "<strong>Verification & Test of ICs</strong> - eecy-ic gmbH (2020)"
+  ],
+  "awards_summary": [
+    "<strong>GFF Scholarship</strong> - TU Dresden (2017)",
+    "<strong>DAAD Scholarship</strong> - TU Dresden (2016)"
+  ],
   "languages": [
-    {
-      "language": "English",
-      "fluency": "Fluent"
-    },
-    {
-      "language": "German",
-      "fluency": "Advanced"
-    },
-    {
-      "language": "Hindi",
-      "fluency": "Fluent"
-    },
-    {
-      "language": "Bengali",
-      "fluency": "Native"
-    }
-  ],
-  "interests": [],
-  "references": [],
-  "projects": [
-    {
-      "name": "Fast-start-up SerDes transmitter for Neuromorphic Hardware Systems",
-      "summary": "M.Sc. Thesis",
-      "startDate": "2017",
-      "endDate": "2018",
-      "institution": "TU Dresden",
-      "highlights": [
-        "Developed a fast start-up SerDes transmitter for neuromorphic system; modeled and verified architecture in simulation",
-        "Extracted key metrics e.g. power, performance, area, & wake-up time; documented & presented results; defended thesis"
-      ]
-    },
-    {
-      "name": "Low latency SerDes link for high-speed communication systems",
-      "summary": "M.Sc. Project",
-      "startDate": "2016",
-      "endDate": "2017",
-      "institution": "TU Dresden",
-      "highlights": [
-        "Designed 2.5 GHz SerDes link and burst-mode CDR (RTL); verified architecture using mixed-mode (AMS) simulation",
-        "Achieved optimum power efficiency, low latency, and reduced link initialization delay; documented & presented results"
-      ]
-    }
-  ],
-  "awards": [
-    {
-      "title": "GFF an der TU Dresden Scholarship",
-      "date": "2017",
-      "awarder": "TU Dresden",
-      "summary": "Scholarship for research contribution during Master's Thesis at chair HPSN"
-    },
-    {
-      "title": "DAAD Scholarship",
-      "date": "2016",
-      "awarder": "DAAD",
-      "summary": "Scholarship for ranking in the top 5% and delivering exceptional project work at TU Dresden"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Phase Locked Loops - Practical & Advanced Design",
-      "date": "2024",
-      "issuer": "Prof. Woogeun Rhee",
-      "url": ""
-    },
-    {
-      "name": "Practical Design of Data Converters",
-      "date": "2021",
-      "issuer": "MEAD Course at EPFL, Switzerland",
-      "url": ""
-    },
-    {
-      "name": "Verification and Test of Integrated Circuits",
-      "date": "2020",
-      "issuer": "eecy-ic gmbH (Acquired by BOSCH)",
-      "url": ""
-    }
-  ],
-  "publications": [],
-  "presentations": [],
-  "teaching": [],
-  "portfolio": []
+    "English (Fluent)",
+    "German (Advanced)",
+    "Hindi (Fluent)",
+    "Bengali (Native)"
+  ]
 }

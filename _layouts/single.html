@@ -2,6 +2,22 @@
 layout: default
 ---
 
+{% if page.post_id %}
+  {% assign post_data = site.data.posts | where: "id", page.post_id | first %}
+  {% assign title = post_data.title %}
+  {% assign content = post_data.content %}
+  {% assign date = post_data.date %}
+  {% assign read_time = post_data.read_time %}
+  {% assign modified = post_data.modified %}
+  {% assign image = post_data.image %}
+{% else %}
+  {% assign title = page.title %}
+  {% assign date = page.date %}
+  {% assign read_time = page.read_time %}
+  {% assign modified = page.modified %}
+  {% assign image = page.image %}
+{% endif %}
+
 {% include base_path %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
@@ -18,33 +34,54 @@ layout: default
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if title %}<meta itemprop="headline" content="{{ title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
-    {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
+    {% if date %}<meta itemprop="datePublished" content="{{ date | date: "%B %d, %Y" }}">{% endif %}
+    {% if modified %}<meta itemprop="dateModified" content="{{ modified | date: "%B %d, %Y" }}">{% endif %}
 
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
-        <header>
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
-          {% if page.read_time %}
-            <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+        <header class="post-header">
+          {% if title %}
+            <h1 class="page__title" itemprop="headline">{{ title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
           {% endif %}
-        {% if page.modified %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
-        {% endif %}
-        
-        {% if page.collection == 'teaching' %}
-          <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif page.venue and page.date %}
-          <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif page.date %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-        {% endif %}    
+          
+          <div class="post-meta">
+            {% if read_time %}
+              <span class="post-meta-item">
+                <i class="far fa-clock" aria-hidden="true"></i> {{ read_time }}
+              </span>
+            {% endif %}
+            
+            {% if modified %}
+              <span class="post-meta-item">
+                <i class="far fa-calendar-alt" aria-hidden="true"></i> {{ modified | date: "%B %d, %Y" }}
+              </span>
+            {% elsif date %}
+              <span class="post-meta-item">
+                <i class="far fa-calendar-alt" aria-hidden="true"></i> {{ date | date: "%B %d, %Y" }}
+              </span>
+            {% endif %}
+            
+            {% if page.collection == 'teaching' %}
+              <span class="post-meta-item">
+                <i class="fas fa-chalkboard-teacher"></i> {{ page.type }}
+              </span>
+            {% elsif page.venue %}
+              <span class="post-meta-item">
+                <i class="fas fa-book"></i> {{ page.venue }}
+              </span>
+            {% endif %}
+          </div>
         </header>
       {% endunless %}
 
       <section class="page__content" itemprop="text">
+        {% if image %}
+          <div class="post-featured-image">
+            <img src="{{ image }}" alt="{{ title }}" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+          </div>
+        {% endif %}
         {{ content }}
 
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
@@ -81,6 +118,17 @@ layout: default
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
         {% include page__taxonomy.html %}
+
+        {% if post_data.tags %}
+          <p class="page__taxonomy">
+            <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }} </strong>
+            <span itemprop="keywords">
+            {% for tag in post_data.tags %}
+              <a href="/tags/#{{ tag | slugify }}" class="page__taxonomy-item" rel="tag">{{ tag }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+            {% endfor %}
+            </span>
+          </p>
+        {% endif %}
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}
@@ -107,3 +155,111 @@ layout: default
     </div>
   {% endif %}
 </div>
+
+<style>
+  /* Professional Single Post Styling */
+  .post-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--global-border-color);
+    padding-bottom: 1.5rem;
+  }
+
+  .page__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: var(--global-text-color);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .post-meta-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .post-meta-item i {
+    margin-right: 6px;
+    color: var(--global-link-color);
+  }
+
+  .page__content {
+    font-size: 1.125rem; /* Slightly larger for readability */
+    line-height: 1.8;
+    color: var(--global-text-color);
+    font-family: "Merriweather", "Georgia", serif; /* Serif for body text looks professional */
+  }
+
+  .page__content h2 {
+    margin-top: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--global-text-color);
+    border-bottom: 2px solid var(--global-border-color);
+    padding-bottom: 0.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Sans-serif for headings */
+  }
+  
+  .page__content h3 {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .page__content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .page__content a {
+    color: var(--global-link-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--global-link-color);
+  }
+
+  .page__content a:hover {
+    border-bottom: 1px solid var(--global-link-color);
+  }
+
+  .page__content blockquote {
+    border-left: 4px solid var(--global-link-color);
+    padding-left: 1rem;
+    font-style: italic;
+    color: var(--global-text-color);
+    background: var(--global-code-background-color);
+    padding: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* Dark Mode Overrides */
+  html[data-theme="dark"] .page__content blockquote {
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--global-text-color-light);
+  }
+
+  html[data-theme="dark"] .page__content p[style*="font-size: smaller"] {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  /* Citation styling */
+  .page__content p[style*="font-size: smaller"] {
+    background: var(--global-code-background-color);
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--global-border-color);
+    font-family: monospace;
+    font-size: 0.85rem !important;
+    color: var(--global-text-color);
+  }
+</style>
