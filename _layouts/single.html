@@ -10,12 +10,14 @@ layout: default
   {% assign read_time = post_data.read_time %}
   {% assign modified = post_data.modified %}
   {% assign image = post_data.image %}
+  {% assign excerpt = post_data.excerpt %}
 {% else %}
   {% assign title = page.title %}
   {% assign date = page.date %}
   {% assign read_time = page.read_time %}
   {% assign modified = page.modified %}
   {% assign image = page.image %}
+  {% assign excerpt = page.excerpt %}
 {% endif %}
 
 {% include base_path %}
@@ -44,6 +46,10 @@ layout: default
         <header class="post-header">
           {% if title %}
             <h1 class="page__title" itemprop="headline">{{ title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+          {% endif %}
+          
+          {% if excerpt %}
+            <p class="post-excerpt">{{ excerpt }}</p>
           {% endif %}
           
           <div class="post-meta">
@@ -113,7 +119,7 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
-      <footer class="page__meta">
+      <!-- <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
@@ -129,7 +135,7 @@ layout: default
             </span>
           </p>
         {% endif %}
-      </footer>
+      </footer> -->
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
@@ -173,6 +179,15 @@ layout: default
     letter-spacing: -0.02em;
   }
 
+  .post-excerpt {
+    font-size: 1.125rem;
+    color: var(--global-text-color-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
   .post-meta {
     display: flex;
     flex-wrap: wrap;
@@ -194,7 +209,7 @@ layout: default
   }
 
   .page__content {
-    font-size: 1.125rem; /* Slightly larger for readability */
+    font-size: 1rem; /* Reduced from 1.125rem */
     line-height: 1.8;
     color: var(--global-text-color);
     font-family: "Merriweather", "Georgia", serif; /* Serif for body text looks professional */
@@ -261,5 +276,27 @@ layout: default
     font-family: monospace;
     font-size: 0.85rem !important;
     color: var(--global-text-color);
+  }
+
+  /* Tag styling for better visibility in light mode */
+  .page__taxonomy .page__taxonomy-item {
+    color: #555555;
+    border-color: #999999;
+  }
+
+  .page__taxonomy .page__taxonomy-item:hover {
+    color: var(--global-link-color-hover);
+    border-color: #666666;
+  }
+
+  /* Dark mode tag styling */
+  html[data-theme="dark"] .page__taxonomy .page__taxonomy-item {
+    color: #b0b0b0;
+    border-color: #666666;
+  }
+
+  html[data-theme="dark"] .page__taxonomy .page__taxonomy-item:hover {
+    color: #e0e0e0;
+    border-color: #888888;
   }
 </style>
