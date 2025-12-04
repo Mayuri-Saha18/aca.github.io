@@ -403,6 +403,68 @@ author_profile: true
     margin-right: 10px;
     font-size: 1.2rem;
   }
+
+  /* Visual Projects - Row Layout */
+  .visual-projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .visual-project-card {
+    background-color: #f9f9f9;
+    border: 1px solid var(--global-border-color);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .visual-project-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  html[data-theme="dark"] .visual-project-card {
+    background: rgba(67, 68, 72, 0.65);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow: 0 10px 24px rgba(2, 6, 23, 0.65);
+  }
+
+  .visual-project-content {
+    flex: 1;
+    padding-right: 2rem;
+  }
+
+  .visual-project-image-container {
+    flex: 1.2;
+    max-width: 60%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .visual-project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15,23,42,0.15);
+    object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+
+  @media (max-width: 768px) {
+    .visual-project-card {
+      flex-direction: column;
+    }
+    .visual-project-image-container {
+      max-width: 100%;
+    }
+  }
 </style>
 
 {% include base_path %}
@@ -411,28 +473,7 @@ author_profile: true
   Here you will find updates on my ongoing engineering tasks, simulation demos, and projects milestone.
 </p>
 
-<h2 class="section-title"><i class="fas fa-video"></i> Simulation Demos</h2>
 
-<div class="projects-grid">
-{% for project in site.data.projects.simulation_demos %}
-  <div class="project-card">
-    <div class="project-header">
-      <h2 class="project-title">{{ project.title }}</h2>
-      <span class="project-date">{{ project.date }}</span>
-    </div>
-
-    <div class="project-subtitle">{{ project.subtitle }}</div>
-
-    <div class="project-description">
-      {{ project.description }}
-    </div>
-
-    {% if project.image %}
-    <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image">
-    {% endif %}
-  </div>
-{% endfor %}
-</div>
 
 <h2 class="section-title"><i class="fas fa-star"></i> Featured Projects</h2>
 
@@ -485,6 +526,35 @@ author_profile: true
       </div>
       {% endif %}
     </div>
+  </div>
+{% endfor %}
+</div>
+
+
+
+<h2 class="section-title"><i class="fas fa-chart-pie"></i> Visual Showcase</h2>
+
+<div class="visual-projects-list">
+{% for project in site.data.projects.visual_projects %}
+  <div class="visual-project-card">
+    <div class="visual-project-content">
+      <div class="project-header">
+        <h2 class="project-title">{{ project.title }}</h2>
+        <span class="project-date">{{ project.date }}</span>
+      </div>
+
+      <div class="project-subtitle">{{ project.subtitle }}</div>
+
+      <div class="project-description">
+        {{ project.description }}
+      </div>
+    </div>
+
+    {% if project.image %}
+    <div class="visual-project-image-container">
+      <img src="{{ project.image }}" alt="{{ project.title }}" class="visual-project-image">
+    </div>
+    {% endif %}
   </div>
 {% endfor %}
 </div>

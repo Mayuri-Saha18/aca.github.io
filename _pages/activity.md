@@ -318,11 +318,12 @@ author_profile: true
 
     <div class="video-wrapper">
       {% if item.video_type == "youtube" %}
-      <iframe src="{{ item.video_url }}" allowfullscreen></iframe>
+      {% assign video_id = item.video_url | split: '/' | last %}
+      <iframe src="{{ item.video_url }}?autoplay=1&mute=1&loop=1&playlist={{ video_id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       {% elsif item.video_type == "vimeo" %}
-      <iframe src="{{ item.video_url }}" allowfullscreen></iframe>
+      <iframe src="{{ item.video_url }}?autoplay=1&muted=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       {% elsif item.video_type == "local" %}
-      <video controls>
+      <video width="100%" height="100%" controls autoplay muted loop playsinline>
         <source src="{{ item.video_url }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>

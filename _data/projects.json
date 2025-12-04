@@ -23,7 +23,7 @@
       "why": "Empowering developers to write code faster using AI-driven suggestions and auto-completion.",
       "description": "Built an intelligent code assistant that uses GPT-4 to generate code snippets, refactor existing code, and provide real-time debugging suggestions. Integrated with VS Code for seamless workflow.",
       "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2670&auto=format&fit=crop",
-      "tech_stack": ["Python", "OpenAI API", "TypeScript", "VS Code Extension API", "React"],
+      "tech_stack": ["Python", "OpenAI API", "TypeScript", "React"],
       "github_url": "https://github.com/yourusername/ai-code-assistant",
       "demo_url": "https://marketplace.visualstudio.com/items?itemName=yourname.ai-assistant"
     },
@@ -37,6 +37,22 @@
       "tech_stack": ["Next.js", "WebSocket", "MongoDB", "Redis", "AWS Lambda"],
       "github_url": "https://github.com/yourusername/collab-platform",
       "demo_url": "https://collab-demo.vercel.app"
+    }
+  ],
+  "visual_projects": [
+    {
+      "title": "Interactive Data Dashboard",
+      "date": "December 2025",
+      "subtitle": "Real-time Analytics Visualization",
+      "description": "A dynamic dashboard designed to visualize complex datasets in real-time. Users can filter data, zoom into specific timeframes, and export reports. The screenshot demonstrates the multi-layered graph rendering engine in action.",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2670&auto=format&fit=crop"
+    },
+    {
+      "title": "Algorithm Visualizer",
+      "date": "November 2025",
+      "subtitle": "Sorting & Pathfinding Demos",
+      "description": "An educational tool that visualizes common algorithms like QuickSort, MergeSort, and A* Pathfinding. The GIF shows the step-by-step execution of the A* algorithm finding the shortest path in a grid.",
+      "image": "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=2670&auto=format&fit=crop"
     }
   ]
 }
