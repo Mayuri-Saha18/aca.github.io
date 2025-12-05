@@ -12,22 +12,27 @@ redirect_from:
 
 <style>
 .highlight-banner {
-  background: linear-gradient(to right, rgba(14, 165, 233, 0.05), rgba(14, 165, 233, 0.1));
-  border: 1px solid rgba(14, 165, 233, 0.2);
-  border-radius: 6px;
-  padding: 1rem 1.25rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), 
+              url('/images/cornell-campus.jpg');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2rem 2rem;
   margin-bottom: 2rem;
+  position: relative;
+  min-height: 250px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
 }
 
 .highlight-content {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.8rem;
+  position: relative;
+  z-index: 2;
 }
 
 .highlight-row {
@@ -41,54 +46,52 @@ redirect_from:
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 700;
-  color: #0ea5e9;
+  color: #7dd3fc;
   min-width: 110px;
   flex-shrink: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .highlight-text {
   font-size: 0.9rem;
-  color: var(--global-text-color);
+  color: #ffffff;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-text strong {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .highlight-link {
-  color: #0ea5e9;
+  color: #7dd3fc;
   font-weight: 600;
   text-decoration: none;
   margin-left: 0.5rem;
   font-size: 0.85rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .highlight-link:hover {
   text-decoration: underline;
+  color: #bae6fd;
 }
 
-.highlight-image {
-  width: 65px;
-  height: 65px;
-  object-fit: contain;
-  background: white;
-  padding: 4px;
-  border-radius: 4px;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-html[data-theme="dark"] .highlight-image {
-  background: rgba(255, 255, 255, 0.9);
+html[data-theme="dark"] .highlight-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), 
+              url('/images/cornell-campus.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
   .highlight-banner {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .highlight-image {
-    margin-bottom: 0.5rem;
-    width: 50px;
-    height: 50px;
+    padding: 1.25rem;
+    min-height: 150px;
   }
   .highlight-row {
     flex-direction: column;
@@ -124,7 +127,6 @@ html[data-theme="dark"] .highlight-image {
       </p>
     </div>
   </div>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Cornell_University_seal.svg/1200px-Cornell_University_seal.svg.png" alt="Cornell University" class="highlight-image">
 </div>
 
 Hello! I'm Bitan Mallik, a seasoned Analog Mixed-Signal Design Engineer currently pursuing a Master of Engineering in Engineering Management at Cornell University (Class of 2026). With over 6 years of professional experience in semiconductor industry, I specialize in designing high-performance analog and mixed-signal circuits for advanced applications.

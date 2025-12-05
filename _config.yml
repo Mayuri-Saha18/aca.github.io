@@ -23,7 +23,7 @@ repository               : "aca/aca.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "avatar.jpg"
   name             : "Bitan Mallik"
   pronouns         : # example: "she/her"  
   bio              : "M.Eng Candidate in Engineering Management at Cornell University"
