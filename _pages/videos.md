@@ -80,8 +80,11 @@ author_profile: true
   <div class="video-card">
     <div class="video-wrapper">
       <iframe 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=1&rel=0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        src="https://www.youtube.com/embed/14aikUdVScI" 
+        title="High-Speed SerDes Transmitter"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
     </div>
@@ -94,8 +97,9 @@ author_profile: true
   <!-- Local Video Example -->
   <div class="video-card">
     <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="../files/313145_tiny.mp4" type="video/mp4">
+      <video muted loop playsinline webkit-playsinline controls preload="auto">
+        <source src="{{ base_path }}/files/313145_tiny_web.mp4" type="video/mp4">
+        <source src="/files/313145_tiny_web.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>

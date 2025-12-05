@@ -6,7 +6,7 @@
       "subtitle": "Initial Eye Diagram Simulation",
       "description": "This project focuses on the architecture of a 56Gbps PAM4 transmitter. In this phase, I am verifying the equalization logic using Cadence Virtuoso. The video below demonstrates the adaptive equalizer convergence and the resulting eye opening after channel loss.",
       "video_type": "youtube",
-      "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "video_url": "https://www.youtube.com/embed/14aikUdVScI"
     },
     {
       "title": "Mixed-Signal Layout Automation",
@@ -14,7 +14,7 @@
       "subtitle": "Scripting in SKILL & Python",
       "description": "An ongoing effort to automate the layout generation for differential pairs to minimize parasitic mismatch. This tool takes a netlist as input and automatically places devices with common-centroid matching. The demo shows the script execution and DRC check.",
       "video_type": "local",
-      "video_url": "../files/313145_tiny.mp4"
+      "video_url": "/files/313145_tiny_web.mp4"
     }
   ],
   "ongoing_tasks": [

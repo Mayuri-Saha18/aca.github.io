@@ -37,8 +37,8 @@ main:
   - title: "Certifications"
     url: /certifications/
 
-  - title: "Videos"
-    url: /videos/
+  # - title: "Videos"
+  #   url: /videos/
     
   # - title: "CV"
   #   url: /cv-json/
