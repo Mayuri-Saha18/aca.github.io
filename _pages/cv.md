@@ -155,7 +155,7 @@ redirect_from:
 
 <!-- DOWNLOAD BUTTON -->
 <div style="text-align: left;">
-  <a href="/files/Resume_BitanMallik.pdf" target="_blank" class="btn-resume">
+  <a href="{{ site.baseurl }}/files/Resume_BitanMallik.pdf" target="_blank" class="btn-resume">
     <i class="fas fa-file-download"></i> View Resume
   </a>
 </div>

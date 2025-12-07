@@ -155,7 +155,7 @@ html[data-theme="dark"] .highlight-banner.no-bg .highlight-link {
 </style>
 
 {% if site.banner.show_background_image %}
-<div class="highlight-banner with-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('{{ site.banner.background_image }}');">
+<div class="highlight-banner with-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('{{ site.baseurl }}{{ site.banner.background_image }}');">
 {% else %}
 <div class="highlight-banner no-bg">
 {% endif %}
@@ -164,7 +164,7 @@ html[data-theme="dark"] .highlight-banner.no-bg .highlight-link {
       <span class="highlight-label"><i class="fas fa-briefcase" style="margin-right: 6px;"></i>Status</span>
       <p class="highlight-text">
         Seeking <strong>Analog Mixed-Signal Design</strong> roles (Summer 2026).
-        <a href="/cv/" class="highlight-link">View CV →</a>
+        <a href="{{ site.baseurl }}/cv/" class="highlight-link">View CV →</a>
       </p>
     </div>
     <div class="highlight-row">

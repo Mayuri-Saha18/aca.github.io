@@ -100,7 +100,9 @@ author_profile: true
   <div class="cv-content">
     <div class="cv-job-title">{{ item.title }}</div>
     <span class="cv-company">{{ item.company }}</span>
-    <a href="{{ item.link }}" target="_blank" class="cv-link"><i class="{{ item.icon }}"></i> {{ item.link_text }}</a>
+    {% if item.link and item.link != "" %}
+    <a href="{{ site.baseurl }}{{ item.link }}" target="_blank" class="cv-link"><i class="{{ item.icon }}"></i> {{ item.link_text }}</a>
+    {% endif %}
   </div>
 </div>
 {% endfor %}
@@ -113,7 +115,9 @@ author_profile: true
   <div class="cv-content">
     <div class="cv-job-title">{{ item.title }}</div>
     <span class="cv-company">{{ item.company }}</span>
-    <a href="{{ item.link }}" target="_blank" class="cv-link"><i class="{{ item.icon }}"></i> {{ item.link_text }}</a>
+    {% if item.link and item.link != "" %}
+    <a href="{{ site.baseurl }}{{ item.link }}" target="_blank" class="cv-link"><i class="{{ item.icon }}"></i> {{ item.link_text }}</a>
+    {% endif %}
   </div>
 </div>
 {% endfor %}
@@ -126,7 +130,9 @@ author_profile: true
   <div class="cv-content">
     <div class="cv-job-title">{{ item.title }}</div>
     <span class="cv-company">{{ item.company }}</span>
-    <a href="{{ item.link }}" target="_blank" class="cv-link"><i class="{{ item.icon }}"></i> {{ item.link_text }}</a>
+    {% if item.link and item.link != "" %}
+    <a href="{{ site.baseurl }}{{ item.link }}" target="_blank" class="cv-link"><i class="{{ item.icon }}"></i> {{ item.link_text }}</a>
+    {% endif %}
   </div>
 </div>
 {% endfor %}

@@ -330,8 +330,7 @@ author_profile: true
       <iframe src="{{ item.video_url }}?autoplay=1&muted=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       {% elsif item.video_type == "local" %}
       <video muted loop playsinline webkit-playsinline controls preload="auto">
-        <source src="{{ base_path }}{{ item.video_url }}" type="video/mp4">
-        <source src="{{ item.video_url }}" type="video/mp4">
+        <source src="{{ site.baseurl }}{{ item.video_url }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       {% endif %}
