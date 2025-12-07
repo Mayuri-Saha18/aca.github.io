@@ -11,18 +11,62 @@ redirect_from:
 {% include base_path %}
 
 <style>
-.highlight-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), 
-              url('/images/cornell-campus.jpg');
+/* Banner with background image */
+.highlight-banner.with-bg {
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.highlight-banner.with-bg .highlight-label {
+  color: #7dd3fc;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-banner.with-bg .highlight-text {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-banner.with-bg .highlight-link {
+  color: #7dd3fc;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-banner.with-bg .highlight-link:hover {
+  color: #bae6fd;
+}
+
+/* Banner without background image */
+.highlight-banner.no-bg {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(14, 165, 233, 0.15));
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.highlight-banner.no-bg .highlight-label {
+  color: #0ea5e9;
+}
+
+.highlight-banner.no-bg .highlight-text {
+  color: var(--global-text-color);
+}
+
+.highlight-banner.no-bg .highlight-link {
+  color: #0ea5e9;
+}
+
+.highlight-banner.no-bg .highlight-link:hover {
+  color: #0284c7;
+}
+
+/* Common banner styles */
+.highlight-banner {
   border-radius: 12px;
   padding: 2rem 2rem;
   margin-bottom: 2rem;
   position: relative;
-  min-height: 250px;
+  min-height: 180px;
   display: flex;
   align-items: center;
 }
@@ -46,46 +90,52 @@ redirect_from:
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 700;
-  color: #7dd3fc;
   min-width: 110px;
   flex-shrink: 0;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .highlight-text {
   font-size: 0.9rem;
-  color: #ffffff;
   margin: 0;
   line-height: 1.5;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .highlight-text strong {
-  color: #ffffff;
   font-weight: 700;
 }
 
 .highlight-link {
-  color: #7dd3fc;
   font-weight: 600;
   text-decoration: none;
   margin-left: 0.5rem;
   font-size: 0.85rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .highlight-link:hover {
   text-decoration: underline;
-  color: #bae6fd;
 }
 
-html[data-theme="dark"] .highlight-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), 
-              url('/images/cornell-campus.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+/* Dark mode with background */
+html[data-theme="dark"] .highlight-banner.with-bg {
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode without background */
+html[data-theme="dark"] .highlight-banner.no-bg {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(14, 165, 233, 0.2));
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+html[data-theme="dark"] .highlight-banner.no-bg .highlight-label {
+  color: #7dd3fc;
+}
+
+html[data-theme="dark"] .highlight-banner.no-bg .highlight-text {
+  color: var(--global-text-color);
+}
+
+html[data-theme="dark"] .highlight-banner.no-bg .highlight-link {
+  color: #7dd3fc;
 }
 
 @media (max-width: 768px) {
@@ -104,7 +154,11 @@ html[data-theme="dark"] .highlight-banner {
 }
 </style>
 
-<div class="highlight-banner">
+{% if site.banner.show_background_image %}
+<div class="highlight-banner with-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('{{ site.banner.background_image }}');">
+{% else %}
+<div class="highlight-banner no-bg">
+{% endif %}
   <div class="highlight-content">
     <div class="highlight-row">
       <span class="highlight-label"><i class="fas fa-briefcase" style="margin-right: 6px;"></i>Status</span>

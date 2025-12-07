@@ -18,6 +18,11 @@ url                      : https://aca.github.io # The base hostname & protocol 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "aca/aca.github.io"
 
+# Banner Settings - Controls the highlight banner on the About page
+banner:
+  show_background_image : true  # Set to false to disable background image
+  background_image      : "/images/cornell-campus.jpg"  # Path to the background image
+
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
